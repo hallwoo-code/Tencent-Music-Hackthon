@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="36%" r="70%">
+      <stop offset="0%" stop-color="#4df0a2"/>
+      <stop offset="38%" stop-color="#173f2b"/>
+      <stop offset="100%" stop-color="#06110f"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 0.16"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#g)"/>
+  <rect width="1200" height="1200" filter="url(#grain)" opacity="0.55"/>
+  <circle cx="600" cy="610" r="300" fill="none" stroke="#d7b45f" stroke-width="8" opacity="0.8"/>
+  <circle cx="600" cy="610" r="230" fill="none" stroke="#f3e7b8" stroke-width="2" opacity="0.35"/>
+  <text x="600" y="560" text-anchor="middle" fill="#f8fff4" font-size="82" font-family="serif" font-weight="700">AI 音浪</text>
+  <text x="600" y="655" text-anchor="middle" fill="#e3bd5c" font-size="62" font-family="serif">Resonance</text>
+  <text x="600" y="740" text-anchor="middle" fill="#d6ecdc" font-size="32" font-family="sans-serif">QQ Music Ideas</text>
+</svg>

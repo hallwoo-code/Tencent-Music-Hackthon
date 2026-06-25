@@ -1,0 +1,90 @@
+[
+  {
+    "id": "ip_desire_open",
+    "timestamp": 30.73,
+    "endTimestamp": 38.99,
+    "type": "lyric-resonance",
+    "lyricIndex": 3,
+    "intensity": 82,
+    "effectTemplate": "melt-recompose",
+    "emotion": "desire",
+    "label": "歌词高共鸣点"
+  },
+  {
+    "id": "ip_conquer",
+    "timestamp": 42.85,
+    "endTimestamp": 51.0,
+    "type": "vocal-turn",
+    "lyricIndex": 6,
+    "intensity": 86,
+    "effectTemplate": "voice-ripple",
+    "emotion": "surrender",
+    "label": "人声转折"
+  },
+  {
+    "id": "ip_bad_habit",
+    "timestamp": 57.36,
+    "endTimestamp": 65.01,
+    "type": "rhythm-change",
+    "lyricIndex": 9,
+    "intensity": 91,
+    "effectTemplate": "space-fold",
+    "emotion": "hook",
+    "label": "节奏突变"
+  },
+  {
+    "id": "ip_soul",
+    "timestamp": 68.44,
+    "endTimestamp": 73.1,
+    "type": "high-note",
+    "lyricIndex": 11,
+    "intensity": 88,
+    "effectTemplate": "vertical-light",
+    "emotion": "soul",
+    "label": "高音进入"
+  },
+  {
+    "id": "ip_chorus_deadman",
+    "timestamp": 73.1,
+    "endTimestamp": 98.71,
+    "type": "chorus",
+    "lyricIndex": 12,
+    "intensity": 98,
+    "effectTemplate": "fragment-burst",
+    "emotion": "chorus",
+    "label": "副歌开始"
+  },
+  {
+    "id": "ip_rain",
+    "timestamp": 110.34,
+    "endTimestamp": 115.07,
+    "type": "solo",
+    "lyricIndex": 21,
+    "intensity": 84,
+    "effectTemplate": "instrument-orbit",
+    "emotion": "rain",
+    "label": "乐器独奏"
+  },
+  {
+    "id": "ip_scream",
+    "timestamp": 121.43,
+    "endTimestamp": 128.92,
+    "type": "dense-beat",
+    "lyricIndex": 23,
+    "intensity": 94,
+    "effectTemplate": "fragment-burst",
+    "emotion": "impact",
+    "label": "鼓点密集"
+  },
+  {
+    "id": "ip_final_deadman",
+    "timestamp": 216.95,
+    "endTimestamp": 224.78,
+    "type": "emotion-peak",
+    "lyricIndex": 45,
+    "intensity": 99,
+    "effectTemplate": "fragment-burst",
+    "emotion": "final",
+    "label": "情绪爆发"
+  }
+]

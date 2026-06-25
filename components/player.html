@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI 音浪共振器</title>
+    __STYLE__
+  </head>
+  <body>
+    <main class="resonance-app" data-view="player" data-template="step" data-motion="full" data-sound="on" data-ready="false">
+      <div class="loading-screen" id="loadingScreen" aria-live="polite">
+        <span>正在建立音浪连接...</span>
+      </div>
+
+      <section class="phone-shell" aria-label="AI 音浪共振器沉浸式播放器">
+        <div class="poster-bg" id="posterBg"></div>
+        <canvas id="fxCanvas" class="fx-canvas" aria-hidden="true"></canvas>
+        <div class="fragment-layer" id="fragmentLayer" aria-hidden="true"></div>
+        <div class="ambient-layer" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+
+        <header class="song-header">
+          <div>
+            <p class="brand">QQ音乐 / AI Sonic Resonance</p>
+            <h1 id="songTitle">Deadman</h1>
+            <p id="artistName">蔡徐坤 / Demo Track</p>
+          </div>
+          <label class="poster-upload" title="导入封面">
+            <input id="posterInput" type="file" accept="image/*" />
+            <span>换封面</span>
+          </label>
+        </header>
+
+        <section class="upload-row" aria-label="音频与演示控制">
+          <label class="file-button">
+            <input id="audioInput" type="file" accept="audio/mpeg,audio/mp3,audio/*" />
+            <span>导入 MP3</span>
+          </label>
+          <button id="lyricsToggleButton" class="soft-button" type="button">粘贴 LRC</button>
+          <button id="demoEndButton" class="soft-button" type="button">演示结算</button>
+          <button id="lyricEarlierButton" class="soft-button sync-button" type="button">提前0.5s</button>
+          <button id="lyricLaterButton" class="soft-button sync-button" type="button">延后0.5s</button>
+          <button id="lyricResetButton" class="soft-button sync-button" type="button">重置偏移</button>
+          <label class="switch"><input id="motionToggle" type="checkbox" checked /> 动效</label>
+          <label class="switch"><input id="soundToggle" type="checkbox" checked /> 音效</label>
+        </section>
+
+        <section class="lyrics-import" id="lyricsImport" aria-label="授权 LRC 歌词粘贴">
+          <p>可粘贴你有权使用的标准 LRC 歌词。歌词切换会读取音频实际 currentTime，不再按行数平均分配。</p>
+          <textarea id="lyricsInput" spellcheck="false" placeholder="[00:12.40]第一句歌词&#10;[00:16.85]第二句歌词"></textarea>
+          <button id="applyLyricsButton" class="gold-button" type="button">应用到播放器</button>
+        </section>
+
+        <section class="ai-status" aria-live="polite">
+          <span id="aiPrompt">AI 正在监听歌曲结构，接近高能段落会标记歌词。</span>
+          <strong id="energyHint">当前能量 0</strong>
+        </section>
+
+        <section class="lyric-stage" id="lyricStage" aria-label="中央歌词舞台">
+          <div class="stage-depth"></div>
+          <div class="lyric-stack" id="lyricStack"></div>
+          <div class="tap-hint" id="tapHint">点击高亮歌词积累共振 0/5</div>
+        </section>
+
+        <section class="comment-current" aria-label="当前歌词评论波">
+          <div class="wave-line" id="currentWave"></div>
+          <div id="currentComments"></div>
+        </section>
+
+        <section class="transport" aria-label="音乐播放控制">
+          <audio id="audio" preload="metadata"></audio>
+          <div class="progress-wrap">
+            <input id="progress" type="range" min="0" max="1000" value="0" aria-label="播放进度" />
+            <div class="point-track" id="pointTrack"></div>
+          </div>
+          <div class="time-row">
+            <span id="currentTime">00:00</span>
+            <button id="playButton" class="play-button" type="button" aria-label="播放">▶</button>
+            <span id="durationTime">00:00</span>
+          </div>
+        </section>
+
+        <section class="settlement" id="settlement" aria-label="能量结算">
+          <p class="brand">本次听歌共振结果</p>
+          <h2>音浪能量结算</h2>
+          <div class="slot-grid">
+            <article><span>实时能量</span><b data-score="liveEnergy">0000</b></article>
+            <article><span>低频冲击</span><b data-score="bassImpact">0000</b></article>
+            <article><span>歌词共振</span><b data-score="lyricResonance">0000</b></article>
+            <article><span>情绪峰值</span><b data-score="emotionPeak">00%</b></article>
+          </div>
+          <button id="fieldButton" class="gold-button" type="button">查看本曲共振场</button>
+        </section>
+      </section>
+
+      <section class="field-shell" aria-label="其他用户的歌词共振场">
+        <div class="field-bg"></div>
+        <header class="field-header">
+          <div>
+            <p class="brand">Song Resonance Field</p>
+            <h2>其他用户高亮歌词</h2>
+          </div>
+          <button id="backButton" class="soft-button" type="button">返回播放器</button>
+        </header>
+        <div class="lyric-cloud" id="lyricCloud"></div>
+        <aside class="comment-detail" id="commentDetail">
+          <p class="brand">点击歌词查看评论</p>
+          <h3>这一句进来的时候真的被电到了。</h3>
+          <div class="electric-wave" id="electricWave"></div>
+          <div id="detailComments"></div>
+          <button id="chargeButton" class="gold-button" type="button">为这句歌词充能</button>
+          <p class="charge-note" id="chargeNote">充能会提升该句成为后续高亮推荐候选的概率。</p>
+        </aside>
+      </section>
+    </main>
+    __DATA__
+    __SCRIPT__
+  </body>
+</html>

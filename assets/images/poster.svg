@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1400" viewBox="0 0 900 1400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c1b14"/>
+      <stop offset="0.45" stop-color="#245b38"/>
+      <stop offset="1" stop-color="#06110f"/>
+    </linearGradient>
+    <filter id="n"><feTurbulence baseFrequency="0.65" numOctaves="4"/><feColorMatrix type="saturate" values="0"/></filter>
+  </defs>
+  <rect width="900" height="1400" fill="url(#bg)"/>
+  <rect width="900" height="1400" filter="url(#n)" opacity="0.12"/>
+  <rect x="90" y="110" width="720" height="1180" rx="44" fill="none" stroke="#d4b160" stroke-width="3" opacity="0.55"/>
+  <circle cx="450" cy="650" r="230" fill="none" stroke="#efcf77" stroke-width="5" opacity="0.72"/>
+  <path d="M260 820 C420 680 480 1000 650 780" fill="none" stroke="#7df0ba" stroke-width="12" opacity="0.5"/>
+  <text x="450" y="560" text-anchor="middle" fill="#f8fff4" font-size="82" font-family="serif" font-weight="700">Deadman</text>
+  <text x="450" y="650" text-anchor="middle" fill="#e5c066" font-size="40" font-family="serif">AI Sonic Resonance</text>
+  <text x="450" y="1120" text-anchor="middle" fill="#dbeade" font-size="30" font-family="sans-serif">点击歌词，释放这一秒</text>
+</svg>
