@@ -1,4 +1,4 @@
-# AI 音浪共振器 Demo
+# AI Sonic Resonance
 
 AI 音浪共振器是一个嵌入 QQ音乐播放体验的高保真交互 Demo。它演示完整链路：
 
